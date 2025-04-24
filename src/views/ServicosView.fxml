@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controller.ServicoController">
+    <!-- Título da tela -->
+    <Label text="Gerenciamento de Serviços" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10" />
+    
+    <!-- Tabela de serviços -->
+<!-- Tabela de serviços -->
+<TableView fx:id="tableViewServicos" id="tabelaServicos" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="50" AnchorPane.rightAnchor="10" AnchorPane.bottomAnchor="150">
+    <columns>
+        <TableColumn fx:id="descricaoColumn" text="Descrição" prefWidth="370" minWidth="200" maxWidth="500" />
+        <TableColumn fx:id="precoColumn" text="Preço" prefWidth="100" minWidth="80" maxWidth="150" />
+        <TableColumn fx:id="dataColumn" text="Data" prefWidth="150" minWidth="100" maxWidth="200" />
+        <TableColumn fx:id="veiculoIdColumn" text="Veículo ID" prefWidth="120" minWidth="100" maxWidth="180" />
+    </columns>
+</TableView>
+    
+    <!-- Caixa de texto e botões -->
+    <HBox spacing="10" AnchorPane.leftAnchor="10" AnchorPane.bottomAnchor="10">
+        <TextField fx:id="descricaoField" promptText="Descrição" />
+        <TextField fx:id="precoField" promptText="Preço" />
+        <TextField fx:id="dataField" promptText="Data" />
+        <TextField fx:id="veiculoIdField" promptText="ID do Veículo" />
+        <Button text="Adicionar" onAction="#addServico" />
+        <Button text="Remover" onAction="#removeServico" />
+    </HBox>
+
+    <!-- Botão de fechar -->
+    <Button fx:id="btnFechar" text="Fechar" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="10" onAction="#fecharAbaServicos"/>
+</AnchorPane>

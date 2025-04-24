@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/17"
+            fx:controller="controller.HistoricoServicoController">
+
+    <!-- Cabeçalho com fundo branco arredondado -->
+    <VBox alignment="CENTER" spacing="5"
+          AnchorPane.topAnchor="10.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0"
+          style="-fx-background-color: white; -fx-padding: 15; -fx-background-radius: 15; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);">
+        <Label text="Histórico de Serviços por Veículo" styleClass="title-label"/>
+        <Label text="Consulte os serviços realizados em veículos registrados" styleClass="subtitle-label"/>
+    </VBox>
+
+    <!-- Campo de busca e botões -->
+    <HBox spacing="10" alignment="CENTER"
+          AnchorPane.topAnchor="100" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <TextField fx:id="txtBusca" promptText="Digite o modelo ou placa do veículo" />
+        <Button fx:id="btnBuscar" text="Buscar" styleClass="info-button" onAction="#buscar"/>
+        <Button fx:id="btnExcluir" text="Excluir Selecionado" styleClass="danger-button" onAction="#excluirSelecionado"/>
+    </HBox>
+
+    <!-- Tabela centralizada, largura perfeita, altura aumentada -->
+    <VBox spacing="10" alignment="TOP_CENTER"
+          AnchorPane.topAnchor="160" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.bottomAnchor="10">
+        <TableView fx:id="tabelaHistorico" styleClass="modern-table" prefWidth="850" prefHeight="500" maxWidth="900">
+            <columns>
+                <TableColumn fx:id="colunaDescricao" text="Descrição" prefWidth="180"/>
+                <TableColumn fx:id="colunaData" text="Data" prefWidth="100"/>
+                <TableColumn fx:id="colunaValor" text="Valor (R$)" prefWidth="100"/>
+                <TableColumn fx:id="colunaModelo" text="Modelo" prefWidth="130"/>
+                <TableColumn fx:id="colunaPlaca" text="Placa" prefWidth="100"/>
+                <TableColumn fx:id="colunaCliente" text="Cliente" prefWidth="140"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

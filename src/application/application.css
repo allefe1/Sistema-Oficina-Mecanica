@@ -1,0 +1,310 @@
+/* Configurações gerais */
+.root {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-background-color: #2c2f38;
+    -fx-text-fill: white;
+}
+
+#custom-scroll-pane {
+    -fx-background-color: #2c2f38; /* Cor de fundo do ScrollPane */
+    -fx-padding: 0;  /* Remove o preenchimento */
+}
+
+#custom-scroll-pane .viewport {
+    -fx-background-color: transparent;  /* Torna o fundo da área visível transparente */
+}
+
+/* Botões */
+.button {
+    -fx-background-color: #4a90e2; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1);
+}
+
+.button:hover {
+    -fx-background-color: #357ab7; 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0, 2);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1; 
+}
+
+.button:pressed {
+    -fx-background-color: #2a6a97; 
+}
+
+/* Campos de texto */
+.text-field {
+    -fx-background-color: #474d58; 
+    -fx-border-color: #4a90e2; 
+    -fx-text-fill: white;
+    -fx-border-radius: 5;
+    -fx-padding: 5 10;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 1);
+}
+
+.text-field:focused {
+    -fx-border-color: #4a90e2;
+    -fx-effect: dropshadow(gaussian, rgba(74, 144, 226, 0.5), 5, 0.5, 0, 2);
+}
+
+/* Tabelas */
+.table-view {
+    -fx-background-color: #3a414d; 
+    -fx-border-color: #4a90e2; 
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c2f38; 
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
+}
+
+.table-view .column-header:hover {
+    -fx-background-color: #3a414d; 
+}
+
+.table-view {
+    -fx-background-color: #3a414d;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+    -fx-pref-width: 300;
+}
+
+.table-column {
+    -fx-pref-width: 150; 
+    -fx-max-width: 150;
+    -fx-min-width: 150;
+}
+
+/* Área de texto */
+.text-area {
+    -fx-background-color: #474d58;
+    -fx-border-color: #4a90e2; 
+    -fx-border-radius: 5;
+    -fx-padding: 10;
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 1);
+}
+
+#tableViewVeiculos .table-view {
+    -fx-background-color: #3a414d;
+    -fx-border-color: #4a90e2;
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+    -fx-pref-width: 300;
+}
+
+#tableViewVeiculos .table-column {
+    -fx-pref-width: 100; 
+    -fx-max-width: 150;
+    -fx-min-width: 150;
+}
+
+/* Detalhes do cliente */
+.label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a90e2; 
+}
+
+/* Campo de busca do cliente */
+#searchFieldCliente {
+    -fx-text-fill: white; 
+    -fx-background-color: #474d58; 
+    -fx-border-color: #4a90e2; 
+}
+
+/* Campo de busca do veículo */
+#searchFieldVeiculo {
+    -fx-text-fill: white; 
+    -fx-background-color: #474d58;
+    -fx-border-color: #4a90e2; 
+}
+
+/* Ajustando a ListView de Serviços */
+#listaServicos {
+    -fx-background-color: #474d58; /* Cor de fundo da lista */
+    -fx-border-color: #4a90e2; /* Cor da borda */
+    -fx-border-radius: 5; /* Borda arredondada */
+    -fx-text-fill: white; /* Cor do texto */
+    -fx-padding: 5; /* Ajuste do padding */
+    -fx-pref-height: 200; /* Ajuste da altura para permitir visualização de mais itens */
+    -fx-spacing: 5; /* Espaçamento entre os itens da lista */
+}
+
+#tabelaServicos {
+    -fx-background-color: #3a414d; /* Cor de fundo */
+    -fx-border-color: #4a90e2; /* Cor da borda */
+    -fx-border-width: 5px; /* Largura da borda */
+    -fx-pref-width: 880px; /* Largura preferencial da tabela (soma das colunas) */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+}
+
+#tabelaServicos .table-column {
+    -fx-max-width: 180px; /* Largura máxima para todas as colunas */
+    -fx-min-width: 100px; /* Largura mínima para as colunas */
+}
+
+#tabelaServicos .table-column-header {
+    -fx-font-size: 14px; /* Tamanho da fonte no cabeçalho */
+    -fx-font-weight: bold; /* Negrito no cabeçalho */
+}
+
+#tabelaServicos .table-column-cell {
+    -fx-alignment: center-left; /* Alinhamento do conteúdo nas células */
+}
+
+/* Coluna 'Descrição' */
+#descricaoColumn {
+    -fx-pref-width: 370px; /* Largura da coluna 'Descrição' */
+}
+
+/* Coluna 'Preço' */
+#precoColumn {
+    -fx-pref-width: 100px; /* Largura da coluna 'Preço' */
+}
+
+#quantidadeColumn {
+	-fx-pref-width: 80px;
+}
+
+/* Coluna 'Data' */
+#dataColumn {
+    -fx-pref-width: 150px; /* Largura da coluna 'Data' */
+}
+
+/* Coluna 'Veículo ID' */
+#veiculoIdColumn {
+    -fx-pref-width: 120px; /* Largura da coluna 'Veículo ID' */
+}
+
+#card-container {
+    -fx-background-color: #4a90e2;  /* Cor de fundo */
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 10px;  /* Padding interno */
+    -fx-pref-width: 220px;  /* Largura preferencial */
+    -fx-pref-height: 95px;  /* Altura preferencial */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 1);
+}
+
+#card-container .title-label {
+    -fx-font-size: 14px;  /* Tamanho da fonte do título */
+    -fx-font-weight: bold;  /* Negrito */
+    -fx-text-fill: white;  /* Cor do texto */
+    -fx-alignment: top-left;  /* Alinha o título no topo e à esquerda */
+}
+
+#card-container .count-label {
+    -fx-font-size: 28px;  /* Tamanho da fonte do número */
+    -fx-font-weight: bold;  /* Negrito */
+    -fx-text-fill: white;  /* Cor do texto */
+    -fx-alignment: center-left;  /* Centralizado verticalmente e alinhado à esquerda */
+}
+
+/* Efeito de aumento ao passar o mouse */
+#card-container:hover {
+    -fx-scale-x: 1.1; /* Aumenta 10% no eixo X */
+    -fx-scale-y: 1.1; /* Aumenta 10% no eixo Y */
+}
+
+/* Estilos específicos para a janela de estoque */
+#estoqueWindow {
+    -fx-background-color: #3a414d;
+}
+
+#estoqueWindow .header-box {
+    -fx-background-color: #2c3e50;
+    -fx-padding: 10px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+    -fx-pref-width: 300px; /* Define uma largura preferida */
+    -fx-max-width: 300px; /* Impede que a largura passe desse limite */
+}
+
+#estoqueWindow .title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+}
+
+#estoqueWindow .subtitle-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bdc3c7;
+}
+
+#estoqueWindow .form-grid {
+    -fx-padding: 30px;
+    -fx-background-color: white;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+#estoqueWindow .input-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* Melhorando os campos de entrada */
+#estoqueWindow .text-field {
+    -fx-pref-width: 250px;
+    -fx-padding: 4px;
+    -fx-background-radius: 5px;
+    -fx-background-color: #ffffff;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 5px;
+    -fx-text-fill: #2c3e50;
+}
+
+.table-view .column-header {
+    -fx-background-color: #2c3e50; /* Cor do fundo do cabeçalho (exemplo: azul escuro) */
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white; /* Cor do texto do cabeçalho (branco para contraste) */
+    -fx-font-weight: bold; /* Deixa o texto em negrito para melhor visibilidade */
+}
+
+#estoqueWindow .modern-table .column-header {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+#tabelaOrdemServico {
+    -fx-background-color: #3a414d; 
+    -fx-border-color: #4a90e2; 
+    -fx-border-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 5, 0.5, 0, 2);
+    -fx-hgap: 10; /* Espaçamento horizontal entre as colunas */
+    -fx-pref-width: 480; /* Deixa a largura ser determinada pelas colunas */
+    /*-fx-max-width: 480px;  /* Impede que a tabela ultrapasse o limite desejado */
+}
+
+
+#servicoColumn {
+    -fx-pref-width: 272px;
+    -fx-max-width: 272px; 
+}
+
+#valorColumn {
+    -fx-pref-width: 100px;  /* Largura para a coluna 'Valor' */
+    -fx-max-width: 100px;
+    -fx-alignment: CENTER;
+}
+
+#quantidadeColumn {
+    -fx-pref-width: 100px;  /* Largura para a coluna 'Quantidade' */
+    -fx-max-width: 100px;
+    -fx-alignment: CENTER;
+}
+

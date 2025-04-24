@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.OrdemServicoController" fitToWidth="true" fitToHeight="true">
+    <content>
+        <AnchorPane prefHeight="771.0" prefWidth="1084.0" style="-fx-background-color: #2C2F38;">
+            <children>
+                <!-- Informações da empresa -->
+                <Label layoutX="20" layoutY="20" text="Empresa:" />
+                <Label fx:id="empresaNomeLabel" layoutX="100" layoutY="20" />
+
+                <Label layoutX="20" layoutY="50" text="CNPJ:" />
+                <Label fx:id="empresaCnpjLabel" layoutX="100" layoutY="50" />
+
+                <Label layoutX="20" layoutY="80" text="Telefone:" />
+                <Label fx:id="empresaTelefoneLabel" layoutX="100" layoutY="80" />
+
+                <Label layoutX="20" layoutY="110" text="Endereço:" />
+                <Label fx:id="empresaEnderecoLabel" layoutX="100" layoutY="110" />
+
+                <!-- Busca por cliente -->
+                <Label layoutX="20" layoutY="150" text="Cliente:" />
+                <TextField fx:id="buscarClienteField" layoutX="100" layoutY="150" onKeyReleased="#filtrarClientes" prefWidth="200" promptText="Digite o nome do cliente" />
+                <ListView fx:id="listaClientes" layoutX="100" layoutY="180" onMouseClicked="#selecionarCliente" prefHeight="100" prefWidth="200" />
+
+                <!-- Busca por veículo -->
+                <Label layoutX="320" layoutY="150" text="Veículo:" />
+                <TextField fx:id="buscarVeiculoField" layoutX="385.0" layoutY="150.0" onKeyReleased="#filtrarVeiculos" prefWidth="200" promptText="Digite o modelo ou placa" />
+                <ListView fx:id="listaVeiculos" layoutX="385.0" layoutY="180.0" onMouseClicked="#selecionarVeiculo" prefHeight="100" prefWidth="200" />
+
+                <!-- Seção de Serviços (à direita) -->
+                <Label layoutX="631.0" layoutY="150.0" text="Serviços:" />
+                <TextField fx:id="buscarServicoField" layoutX="708.0" layoutY="150.0" onKeyReleased="#filtrarServicos" prefWidth="300" promptText="Digite o nome do serviço" />
+                <Button layoutX="1023.0" layoutY="150.0" onAction="#adicionarServico" text="Adicionar Serviço" />
+                <ListView fx:id="listaServicos" layoutX="708.0" layoutY="180.0" prefHeight="70" prefWidth="300" />
+
+                <!-- Tabela de serviços -->
+                <TableView id="tabelaOrdemServico" fx:id="servicosTableView" layoutX="20.0" layoutY="315.0" prefHeight="350" prefWidth="1040">
+                    <columns>
+                        <TableColumn fx:id="servicoColumn" text="Serviço" />
+                        <TableColumn fx:id="valorColumn" text="Valor (R$)" />
+                        <TableColumn fx:id="quantidadeColumn" text="Quantidade" />
+                    </columns>
+                </TableView>
+
+                <!-- Botão para remover serviço -->
+                <Button layoutX="1025.0" layoutY="192.0" onAction="#removerServico" text="Remover Serviço" />
+                <Button fx:id="btnNovoServico" layoutX="1025.0" layoutY="237.0" onAction="#abrirDialogNovoServico" text="Novo Serviço" />
+
+                <!-- Seção de desconto e total -->
+                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="680.0" spacing="10">
+                    <children>
+                        <Label style="-fx-font-weight: bold;" text="Subtotal:" />
+                        <Label fx:id="subtotalLabel" text="R$ 0,00" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="710.0" spacing="10">
+                    <children>
+                        <Label style="-fx-font-weight: bold;" text="Desconto:" />
+                        <ComboBox fx:id="tipoDescontoComboBox" onAction="#tipoDescontoAlterado" prefWidth="120" promptText="Tipo de desconto" />
+                        <TextField fx:id="descontoField" alignment="CENTER_RIGHT" onKeyPressed="#aplicarDescontoComEnter" prefWidth="100" promptText="0-100" text="0" />
+                        <Button onAction="#calcularDesconto" text="Aplicar" />
+                    </children>
+                </HBox>
+
+                <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="740.0" spacing="10">
+                    <children>
+                        <Label style="-fx-font-weight: bold;" text="Total:" />
+                        <Label fx:id="totalLabel" style="-fx-font-weight: bold;" text="R$ 0,00" />
+                    </children>
+                </HBox>
+
+                <!-- RadioButtons: salvar no histórico -->
+                <Label layoutX="515.0" layoutY="660.0" text="Salvar no histórico?" />
+                <RadioButton fx:id="radioSim" layoutX="680.0" layoutY="660.0" text="Sim" style="-fx-text-fill: white;" />
+                <RadioButton fx:id="radioNao" layoutX="740.0" layoutY="660.0" text="Não" style="-fx-text-fill: white;" />
+
+                <!-- Botões de ação -->
+                <Button layoutX="515.0" layoutY="690.0" onAction="#gerarOrdemServico" text="Gerar Ordem de Serviço" />
+                <Button layoutX="515.0" layoutY="730.0" onAction="#imprimirOrdemServico" text="Imprimir" />
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>
